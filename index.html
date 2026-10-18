@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="so">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Generator ULTRA PRO</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="main-wrapper">
+        <div class="app-card">
+            <header class="app-header">
+                <div class="logo-area">
+                    <i class="fa-solid fa-shield-halved security-icon"></i>
+                    <h1>Password Generator <span class="badge">ULTRA PRO</span></h1>
+                </div>
+                <p class="tagline">Generate rock-solid, secure passwords instantly.</p>
+            </header>
+
+            <section class="display-section">
+                <div class="input-group result-display">
+                    <input type="text" id="password-display" readonly placeholder="Your Secure Password...">
+                    <button id="copy-btn" class="action-btn" title="Copy to Clipboard">
+                        <i class="fa-regular fa-copy"></i>
+                    </button>
+                </div>
+            </section>
+
+            <section class="strength-section">
+                <div class="strength-meta">
+                    <span class="label">Password Strength:</span>
+                    <span id="strength-label" class="strength-status">Calculating...</span>
+                </div>
+                <div class="meter-container">
+                    <div id="strength-meter-fill" class="meter-fill"></div>
+                </div>
+            </section>
+
+            <section class="settings-section">
+                <div class="control-group length-control">
+                    <div class="control-label">
+                        <label for="length">Password Length</label>
+                        <span id="length-value" class="value-display">16</span>
+                    </div>
+                    <input type="range" id="length" min="6" max="64" value="16">
+                </div>
+
+                <div class="options-grid">
+                    <div class="option-item">
+                        <input type="checkbox" id="uppercase" checked>
+                        <label for="uppercase" class="custom-check">Uppercase (A-Z)</label>
+                    </div>
+                    <div class="option-item">
+                        <input type="checkbox" id="lowercase" checked>
+                        <label for="lowercase" class="custom-check">Lowercase (a-z)</label>
+                    </div>
+                    <div class="option-item">
+                        <input type="checkbox" id="numbers" checked>
+                        <label for="numbers" class="custom-check">Numbers (0-9)</label>
+                    </div>
+                    <div class="option-item">
+                        <input type="checkbox" id="symbols" checked>
+                        <label for="symbols" class="custom-check">Symbols (!@#$)</label>
+                    </div>
+                    <div class="option-item pro-feature">
+                        <input type="checkbox" id="no-duplicate">
+                        <label for="no-duplicate" class="custom-check">No Duplicate Chars</label>
+                    </div>
+                </div>
+            </section>
+
+            <footer class="app-footer">
+                <button id="generate-btn" class="main-action-btn">
+                    <i class="fa-solid fa-key"></i> Generate Password
+                </button>
+            </footer>
+        </div>
+    </div>
+
+    <!-- Notification Toast -->
+    <div id="toast" class="toast-notification">
+        <i class="fa-solid fa-check-circle"></i> Password copied!
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

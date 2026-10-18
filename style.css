@@ -1,0 +1,308 @@
+:root {
+    --bg-main: #0a0f1e;
+    --card-bg: #141b2d;
+    --text-primary: #f1f5f9;
+    --text-secondary: #94a3b8;
+    --primary-color: #38bdf8;
+    --primary-hover: #0ea5e9;
+    --border-color: #273045;
+    --input-bg: #0d1222;
+    --shadow-main: 0 20px 40px rgba(0, 0, 0, 0.5);
+    
+    /* Strength Colors */
+    --strength-weak: #ef4444;
+    --strength-medium: #f59e0b;
+    --strength-strong: #10b981;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+    background-color: var(--bg-main);
+    color: var(--text-primary);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.main-wrapper {
+    width: 100%;
+    max-width: 480px;
+}
+
+.app-card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: var(--shadow-main);
+    transition: transform 0.3s ease;
+}
+
+.app-card:hover {
+    transform: translateY(-5px);
+}
+
+.app-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.logo-area {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 8px;
+}
+
+.security-icon {
+    font-size: 28px;
+    color: var(--primary-color);
+}
+
+h1 {
+    font-size: 24px;
+    font-weight: 800;
+}
+
+.badge {
+    background: linear-gradient(135deg, #0ea5e9 0%, #38bdf8 100%);
+    color: #fff;
+    font-size: 12px;
+    padding: 4px 8px;
+    border-radius: 6px;
+    vertical-align: middle;
+    margin-left: 5px;
+    letter-spacing: 0.5px;
+}
+
+.tagline {
+    font-size: 14px;
+    color: var(--text-secondary);
+}
+
+.display-section {
+    margin-bottom: 20px;
+}
+
+.result-display {
+    background-color: var(--input-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    display: flex;
+    overflow: hidden;
+    position: relative;
+}
+
+#password-display {
+    flex-grow: 1;
+    background: transparent;
+    border: none;
+    color: var(--primary-color);
+    font-family: 'Fira Code', 'Consolas', 'Courier New', monospace;
+    font-size: 18px;
+    padding: 16px;
+    letter-spacing: 1px;
+    width: 100%;
+}
+
+#password-display:focus {
+    outline: none;
+}
+
+.action-btn {
+    background-color: transparent;
+    border: none;
+    border-left: 1px solid var(--border-color);
+    color: var(--text-secondary);
+    font-size: 20px;
+    padding: 0 20px;
+    cursor: pointer;
+    transition: color 0.2s, background-color 0.2s;
+}
+
+.action-btn:hover {
+    color: var(--primary-color);
+    background-color: rgba(56, 189, 248, 0.05);
+}
+
+.strength-section {
+    margin-bottom: 30px;
+}
+
+.strength-meta {
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+    margin-bottom: 8px;
+    color: var(--text-secondary);
+}
+
+.strength-status {
+    font-weight: 700;
+}
+
+.meter-container {
+    background-color: var(--input-bg);
+    height: 8px;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.meter-fill {
+    height: 100%;
+    width: 0%;
+    transition: width 0.4s ease-out, background-color 0.4s linear;
+}
+
+.settings-section {
+    margin-bottom: 30px;
+}
+
+.control-group {
+    margin-bottom: 20px;
+}
+
+.control-label {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: var(--text-primary);
+}
+
+.value-display {
+    color: var(--primary-color);
+    font-weight: 700;
+}
+
+input[type="range"] {
+    width: 100%;
+    accent-color: var(--primary-color);
+    cursor: pointer;
+}
+
+.options-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.option-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+    color: var(--text-secondary);
+}
+
+.option-item input[type="checkbox"] {
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--border-color);
+    border-radius: 5px;
+    background-color: var(--input-bg);
+    cursor: pointer;
+    position: relative;
+    transition: background-color 0.2s, border-color 0.2s;
+}
+
+.option-item input[type="checkbox"]:checked {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.option-item input[type="checkbox"]:checked::after {
+    content: '\f00c';
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    color: #fff;
+    font-size: 12px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.option-item input[type="checkbox"]:hover {
+    border-color: var(--primary-hover);
+}
+
+.pro-feature {
+    grid-column: span 2;
+    border-top: 1px solid var(--border-color);
+    padding-top: 10px;
+    margin-top: 5px;
+}
+
+.main-action-btn {
+    width: 100%;
+    background: linear-gradient(135deg, #0ea5e9 0%, #38bdf8 100%);
+    color: #fff;
+    border: none;
+    padding: 16px;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 4px 15px rgba(56, 189, 248, 0.3);
+    transition: background 0.2s, box-shadow 0.2s, transform 0.1s;
+}
+
+.main-action-btn:hover {
+    box-shadow: 0 6px 20px rgba(56, 189, 248, 0.4);
+}
+
+.main-action-btn:active {
+    transform: scale(0.98);
+}
+
+/* Toast */
+.toast-notification {
+    position: fixed;
+    top: 30px;
+    right: 30px;
+    background-color: var(--strength-strong);
+    color: #fff;
+    padding: 15px 25px;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+    transform: translateX(200%);
+    transition: transform 0.3s ease-in-out;
+    z-index: 1000;
+}
+
+.toast-notification.show {
+    transform: translateX(0);
+}
+
+@media (max-width: 480px) {
+    .app-card {
+        padding: 30px;
+    }
+    .options-grid {
+        grid-template-columns: 1fr;
+    }
+    .pro-feature {
+        grid-column: span 1;
+    }
+}
